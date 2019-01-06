@@ -6,6 +6,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  line-height: 1;
+  background-color: rgb(41, 64, 89);
 }
 
 code {
@@ -15,4 +17,39 @@ code {
 
 a {
   text-decoration: none;
+}
+
+.menu-links {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  /*float: right;*/
+  /*padding: 22px 0px 0px 0px;*/
+  text-transform: uppercase;
+  color: rgb(255, 255, 255);
+  font-size: 12px;
+}
+
+.menu-links-item {
+  margin: 0px 15px 0px 15px;
+}
+
+.menu-links-item a {
+  color: white;
+  transition: color .2s;
+}
+
+.menu-links-item a:hover {
+  color: gray;
+}
+
+.header-area {
+  display: flex;
+  z-index: 1;
+  height: auto;
+  background-color: rgb(25, 39, 54);
+}
+
+.page-title {
+
 }

@@ -3,7 +3,7 @@ import Header from './Header/Header'
 import Body from './Body/Body'
 
 export default class App extends React.Component {
-  render () {
+  render() {
     return (
       <div>
         <Header/>

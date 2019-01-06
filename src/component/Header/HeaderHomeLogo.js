@@ -1,7 +1,9 @@
 import React from 'react'
+import {NavLink} from 'react-router-dom'
 
 const homeStyle = {
-  float: 'left',
+  display: 'flex',
+  alignItems: 'center',
   padding: '15px',
 }
 
@@ -28,12 +30,12 @@ export default class HeaderHomeLogo extends React.Component {
   render() {
     return (
       <div style={homeStyle}>
-        <a href={'/'}>
+        <NavLink to={'/'}>
           <h1 style={homeNameStyle}>
             adam estefani
             <span style={homeSubtitleStyle}>landscape, urban & lifestyle photography</span>
           </h1>
-        </a>
+        </NavLink>
       </div>
     )
   }
