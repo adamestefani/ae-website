@@ -1,5 +1,6 @@
 import React from 'react'
 import backgroundImage from '../../resource/home-background.jpg'
+import PropTypes from 'prop-types'
 
 const backgroundStyle = {
   zIndex: -1,
@@ -17,9 +18,13 @@ const backgroundStyle = {
 
 export default class BackgroundImage extends React.Component {
 
-  render () {
+  render() {
     return (
-      <div style={backgroundStyle} />
+      <div className={this.props.className} style={backgroundStyle}/>
     )
   }
+}
+
+BackgroundImage.propTypes = {
+  className: PropTypes.string
 }
