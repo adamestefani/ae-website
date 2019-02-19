@@ -13,15 +13,13 @@ const backgroundStyle = {
   height: '100%',
   position: 'absolute',
   top: '0',
-  left: '0'
+  left: '0',
+  transition: 'opacity 250ms ease-in'
 }
 
 export default class BackgroundImage extends React.Component {
-
   render() {
-    return (
-      <div className={this.props.className} style={backgroundStyle}/>
-    )
+    return <div className={this.props.className} style={backgroundStyle} />
   }
 }
 
