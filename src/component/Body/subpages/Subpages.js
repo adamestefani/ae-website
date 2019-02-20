@@ -1,4 +1,7 @@
-import Gallery from './Gallery'
 import Home from './Home'
+import Gallery from './Gallery'
+import About from './About'
+import Store from './Store'
+import Contact from './Contact'
 
-export { Gallery, Home }
+export { Home, Gallery, About, Store, Contact }

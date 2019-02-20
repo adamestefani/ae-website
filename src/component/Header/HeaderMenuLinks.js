@@ -1,17 +1,38 @@
 import React from 'react'
-import {NavLink} from 'react-router-dom'
+import { PropTypes } from 'prop-types'
+import { Link } from 'react-router-dom'
+
+const menuItems = [
+  { label: 'Gallery', url: '/gallery' },
+  { label: 'About', url: '/about' },
+  { label: 'Store', url: '/store' },
+  { label: 'Contact', url: '/contact' }
+]
+
+const NavLink = (args) => {
+  return menuItems.map((item) => {
+    if (args.currentpath !== item.url) {
+      return (
+        <Link to={item.url} className={'menu-links-item'}>
+          {item.label}
+        </Link>
+      )
+    } else {
+      return <div className={'menu-links-item-active'}>{item.label}</div>
+    }
+  })
+}
 
 export default class HeaderMenuLinks extends React.Component {
   render() {
     return (
       <div className={'menu-links'}>
-        <div className={'menu-links-item'}>
-          <NavLink to={'/gallery'}>Gallery</NavLink>
-        </div>
-        <div className={'menu-links-item'}>About</div>
-        <div className={'menu-links-item'}>Store</div>
-        <div className={'menu-links-item'}>Contact</div>
+        <NavLink currentpath={this.props.pathname} />
       </div>
     )
   }
+}
+
+HeaderMenuLinks.propTypes = {
+  pathname: PropTypes.string.isRequired
 }

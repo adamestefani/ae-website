@@ -13,8 +13,7 @@ const backgroundStyle = {
   height: '100%',
   position: 'absolute',
   top: '0',
-  left: '0',
-  transition: 'opacity 250ms ease-in'
+  left: '0'
 }
 
 export default class BackgroundImage extends React.Component {

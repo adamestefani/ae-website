@@ -11,8 +11,8 @@ export default class App extends React.Component {
           <Route
             render={({ location }) => (
               <div>
-                <Header />
-                <Body location={location}/>
+                <Header pathname={location.pathname} />
+                <Body location={location} />
               </div>
             )}
           />
