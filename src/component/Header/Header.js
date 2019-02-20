@@ -1,19 +1,26 @@
 import React from 'react'
-import {PropTypes} from 'prop-types'
 import HeaderHomeLogo from './HeaderHomeLogo'
 import HeaderMenuLinks from './HeaderMenuLinks'
+import { PropTypes } from 'prop-types'
 
 export default class Header extends React.Component {
   render() {
     return (
-      <div className={'header-area'}>
-        <HeaderHomeLogo pathname={this.props.pathname}/>
-        <HeaderMenuLinks pathname={this.props.pathname}/>
+      <div className={'header-area'} id={'header-area'}>
+        <HeaderHomeLogo
+          handleChangeActiveMenuItem={this.props.handleChangeActiveMenuItem}
+          activeMenuItem={this.props.activeMenuItem}
+        />
+        <HeaderMenuLinks
+          handleChangeActiveMenuItem={this.props.handleChangeActiveMenuItem}
+          activeMenuItem={this.props.activeMenuItem}
+        />
       </div>
     )
   }
 }
 
 Header.propTypes = {
-  pathname: PropTypes.string.isRequired
+  handleChangeActiveMenuItem: PropTypes.func,
+  activeMenuItem: PropTypes.string
 }

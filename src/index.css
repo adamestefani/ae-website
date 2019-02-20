@@ -8,12 +8,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
   line-height: 1;
   background-color: rgb(255, 255, 255);
-
-  /*background-image: url(/home-background.jpg);*/
-  /*background-position: center center;*/
-  /*background-repeat: no-repeat;*/
-  /*background-size: cover;*/
-  /*background-attachment: fixed;*/
 }
 
 code {
@@ -27,42 +21,33 @@ a {
 }
 
 .menu-links {
-  --item-display: flex;
-  --item-align: center;
-  --item-justify: center;
-  --item-margin: 0px 1px;
-  --item-width: 100px;
   display: flex;
   align-items: stretch;
   text-transform: uppercase;
   color: rgb(255, 255, 255);
   font-size: 12px;
+  margin-right: 20px;
 }
 
 .menu-links-item {
-  display: var(--item-display);
-  align-items: var(--item-align);
-  justify-content: var(--item-justify);
-  margin: var(--item-margin);
-  width: var(--item-width);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0px 1px;
+  width: 100px;
   color: white;
   background-color: rgba(255, 255, 255, 0);
-  transition: 0.2s;
+  transition: 500ms;
 }
 
 .menu-links-item:hover {
   color: rgba(0, 0, 0, 0.8);
-  background-color: rgba(255, 255, 255, 1);
+  background-color: rgba(255, 255, 255, 0.9);
 }
 
-.menu-links-item-active {
-  display: var(--item-display);
-  align-items: var(--item-align);
-  justify-content: var(--item-justify);
-  margin: var(--item-margin);
-  width: var(--item-width);
+.active {
   color: rgba(0, 0, 0, 0.8);
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 1);
 }
 
 .header-area {
@@ -70,7 +55,7 @@ a {
   z-index: 1;
   height: auto;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 10, 25, 0.85);
   justify-content: space-between;
 }
 
@@ -100,22 +85,33 @@ a {
   letter-spacing: 1px;
 }
 
-/* fade class used by react-transition-group */
-.fade-enter {
-  opacity: 0;
-}
-.fade-enter.fade-enter-active {
+.page-content {
   position: absolute;
-  opacity: 1;
-  transition: 250ms;
+  align-items: stretch;
+  display: flex;
+  opacity: 0;
+  transition: 500ms;
 }
 
-.fade-exit {
+.page-content:target {
   opacity: 1;
 }
-.fade-exit.fade-exit-active {
-  position: absolute;
+
+.fade-background-out {
   opacity: 0;
-  transition: 250ms;
 }
-/*------------------------------------*/
+
+.home-background {
+  z-index: -1;
+  background-image: url('./resource/home-background.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: rgb(0, 50, 80);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 500ms;
+}

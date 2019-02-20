@@ -1,23 +1,36 @@
 import React from 'react'
 import Header from './Header/Header'
 import Body from './Body/Body'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 export default class App extends React.Component {
+  constructor() {
+    super()
+    this.state = {
+      activeMenuItem: 'home'
+    }
+
+    this.handleChangeActiveMenuItem = this.handleChangeActiveMenuItem.bind(this)
+  }
+
+  handleChangeActiveMenuItem(event) {
+    let nextActiveItem = event.target.name
+    if (!nextActiveItem) {
+      nextActiveItem = 'home'
+    }
+    this.setState({
+      activeMenuItem: nextActiveItem
+    })
+  }
+
   render() {
     return (
-      <Router>
-        <div>
-          <Route
-            render={({ location }) => (
-              <div>
-                <Header pathname={location.pathname} />
-                <Body location={location} />
-              </div>
-            )}
-          />
-        </div>
-      </Router>
+      <div>
+        <Header
+          handleChangeActiveMenuItem={this.handleChangeActiveMenuItem}
+          activeMenuItem={this.state.activeMenuItem}
+        />
+        <Body activeMenuItem={this.state.activeMenuItem} />
+      </div>
     )
   }
 }
