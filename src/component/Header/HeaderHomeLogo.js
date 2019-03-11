@@ -11,7 +11,7 @@ export default class HeaderHomeLogo extends React.Component {
           onClick={this.props.handleChangeActiveMenuItem}
         >
           <div className={'home-title'}>website</div>
-          <div className={'home-subtitle'}>another title or slogan</div>
+          <div className={'home-subtitle'}>{'slogan & something else'}</div>
         </a>
       </div>
     )
