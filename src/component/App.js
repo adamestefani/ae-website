@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from './Header/Header'
 import Body from './Body/Body'
+import Footer from './Body/Footer'
 
 export default class App extends React.Component {
   constructor() {
@@ -24,13 +25,14 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <>
         <Header
           handleChangeActiveMenuItem={this.handleChangeActiveMenuItem}
           activeMenuItem={this.state.activeMenuItem}
         />
         <Body activeMenuItem={this.state.activeMenuItem} />
-      </div>
+        <Footer activeMenuItem={this.state.activeMenuItem} />
+      </>
     )
   }
 }
