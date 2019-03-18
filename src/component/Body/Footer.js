@@ -35,7 +35,7 @@ class Footer extends Component {
       >
         <div className="footer-media">{this.renderMedia()}</div>
         <div className="footer-copyright">
-          Copyright &copy; {new Date().getFullYear()} Adam Estefani.
+          &copy; {new Date().getFullYear()} by Adam Estefani.
         </div>
       </div>
     )
