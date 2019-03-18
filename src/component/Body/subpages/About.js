@@ -21,20 +21,20 @@ export default class About extends React.Component {
             </h1>
             <p>
               I was born and raised in São Paulo-Brazil and now I call Toronto
-              home. I'm an urban photographer who loves everything related with
-              that, exploring the city on a sunny day or challenging umplesent
+              home. I'm an urban photographer who loves everything about it,
+              exploring the city on a sunny day or challenging unpleasant
               weather conditions.
             </p>
             <p>
-              I appreciate the challenges of creating an image, finding the
+              I appreciate the challenges of capturing a good image, finding the
               right angle, the right lighting, experimenting new ideas and
               moving away from the comfort zone.
             </p>
             <p>
               It's really interesting to me that anything can change
-              dramatically if you just look from another view point, and I'm
-              grateful for the new perspectives that photography gives me every
-              day.
+              dramatically if you just look at it from another view point, and
+              I'm grateful for the new perspectives that photography gives me
+              every day.
             </p>
           </div>
         </div>
