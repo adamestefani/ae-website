@@ -1,32 +1,25 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import test1 from '../../../resource/test-1.jpg'
-import test2 from '../../../resource/test-2.jpg'
-import test3 from '../../../resource/test-3.jpg'
-import test4 from '../../../resource/test-4.jpg'
-import test5 from '../../../resource/test-5.jpg'
-import test6 from '../../../resource/test-6.jpg'
 
-const galleryContent = [
-  { fileName: 'test-1', filePath: test1, width: '1' },
-  { fileName: 'test-2', filePath: test2, width: '1' },
-  { fileName: 'test-4', filePath: test4, width: '2' },
-  { fileName: 'test-3', filePath: test3, width: '2' },
-  { fileName: 'test-5', filePath: test5, width: '2' },
-  { fileName: 'test-6', filePath: test6, width: '1' }
-]
+const filePath = 'https://s3.amazonaws.com/adamestefaniphoto/'
+const gallery = new Array(24).fill(undefined).map((_, index) => index + 1)
 
 export default class Gallery extends React.Component {
   renderGallery() {
     return (
       <div className="gallery-grid">
-        {galleryContent.map((file, index) => {
+        {gallery.map((value, index) => {
           return (
             <img
               className="gallery-item"
               key={index}
-              src={file.filePath}
-              alt={file.fileName}
+              src={filePath.concat(
+                'portfolio/thumbs/img_',
+                '000'.substring(String(value).length, 3),
+                value,
+                '.jpg'
+              )}
+              alt=""
             />
           )
         })}
@@ -37,6 +30,7 @@ export default class Gallery extends React.Component {
   render() {
     return (
       <div
+        id="gallery"
         className={
           this.props.activeMenuItem === 'gallery'
             ? 'page-content target'
