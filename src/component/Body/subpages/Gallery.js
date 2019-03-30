@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Copyright from '../../util/copyright'
 
 const filePath = 'https://s3.amazonaws.com/adamestefaniphoto/'
 const gallery = new Array(24).fill(undefined).map((_, index) => index + 1)
@@ -39,6 +40,7 @@ export default class Gallery extends React.Component {
       >
         <h1 className={'page-title'}>Gallery</h1>
         {this.renderGallery()}
+        <Copyright className="show-copyright" />
       </div>
     )
   }

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import iconFacebook from '../../resource/icon_facebook.svg'
 import iconInstagram from '../../resource/icon_instagram.svg'
 import iconTwitter from '../../resource/icon_twitter.svg'
+import Copyright from '../util/copyright'
 
 const mediaIcons = [
   { url: 'https://instagram.com/adamestefani', icon: iconInstagram },
@@ -34,9 +35,7 @@ class Footer extends Component {
         }
       >
         <div className="footer-media">{this.renderMedia()}</div>
-        <div className="footer-copyright">
-          &copy; {new Date().getFullYear()} Adam Estefani. All rights reserved.
-        </div>
+        <Copyright className="footer-copyright" />
       </div>
     )
   }

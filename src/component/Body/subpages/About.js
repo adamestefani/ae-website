@@ -10,7 +10,7 @@ export default class About extends React.Component {
             : 'page-content'
         }
       >
-        <h1 className={'page-title'}>About</h1>
+        <h1 className="page-title">About</h1>
         <div className="about-area">
           <div className="about-picture">
             <img src="" alt="" />
