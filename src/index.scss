@@ -47,9 +47,14 @@ p {
   z-index: 2;
   height: 60px;
   width: 100%;
-  background-color: rgba(0, 10, 25, 0.95);
+  background-color: rgba(0, 0, 0, 0.97);
   justify-content: space-between;
   box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.2);
+  transition: 250ms;
+}
+.header-area.content {
+  filter: invert(100%);
+  box-shadow: 0 1px 20px 0 rgba(255, 255, 255, 0.1);
 }
 
 .menu-links {
@@ -66,7 +71,8 @@ p {
   align-items: center;
   justify-content: center;
   margin: 0px 1px;
-  width: 100px;
+  width: auto;
+  padding: 0 50px;
   color: white;
   background-color: rgba(255, 255, 255, 0);
   transition: 250ms;
@@ -78,7 +84,7 @@ p {
 }
 
 .menu-links-item.active {
-  color: rgba(0, 0, 0, 0.8);
+  color: rgba(0, 0, 0, 1);
   background-color: rgba(255, 255, 255, 1);
   cursor: default;
 }
@@ -86,7 +92,7 @@ p {
 .home-link {
   display: flex;
   align-items: center;
-  padding: 0 15px;
+  margin-left: 60px;
 }
 
 .home-title {
@@ -154,6 +160,44 @@ p {
   font-size: 1.5rem;
 }
 
+.modal-container {
+  z-index: -10;
+  top: 0;
+  left: 0;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9);
+  opacity: 0;
+  transition: 250ms;
+
+  .large-picture {
+    max-width: 90vw;
+    max-height: 90vh;
+  }
+
+  .close-modal {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+    filter: invert(100%);
+    opacity: 0.9;
+  }
+  .close-modal:hover {
+    opacity: 1;
+    cursor: pointer;
+  }
+}
+.modal-container.active {
+  z-index: 10;
+  opacity: 1;
+}
+
 /*---------- HOME PAGE ----------*/
 .home-background {
   z-index: -1;
@@ -182,6 +226,12 @@ p {
   margin: 5px 5px;
   background-color: rgb(230, 230, 230);
   flex-grow: initial;
+  transition: 200ms;
+}
+
+.gallery-item:hover {
+  cursor: pointer;
+  filter: brightness(0.6);
 }
 
 /*---------- FOOTER ----------*/
@@ -193,7 +243,7 @@ p {
   justify-content: center;
   width: 100%;
   bottom: 0;
-  margin: 20px 0;
+  padding: 20px 0;
 
   .footer-media {
     display: flex;
@@ -214,7 +264,6 @@ p {
   height: 100vh;
   min-height: 300px;
   left: 0px;
-  margin: 20px 0;
 
   .footer-media {
     display: flex;
@@ -234,7 +283,7 @@ p {
 }
 
 .footer-media-item {
-  opacity: 0.5;
+  opacity: 0.7;
   margin: 10px 10px;
   width: 40px;
   transition: 250ms;
@@ -316,7 +365,7 @@ form {
     font-size: 1rem;
     border: none;
     color: #fff;
-    background-color: rgba(0, 10, 25, 0.95);
+    background-color: rgba(0, 0, 0, 0.95);
   }
 
   .input-label {

@@ -4,7 +4,7 @@ import { PropTypes } from 'prop-types'
 const menuItems = [
   { label: 'Gallery', name: 'gallery' },
   { label: 'About', name: 'about' },
-  { label: 'Store', name: 'store' },
+  // { label: 'Store', name: 'store' },
   { label: 'Contact', name: 'contact' }
 ]
 
@@ -27,20 +27,20 @@ const NavLink = (args) => {
   })
 }
 
-export default class HeaderMenuLinks extends React.Component {
-  render() {
-    return (
-      <div className="menu-links" id={'menu-links'}>
-        <NavLink
-          handleChangeActiveMenuItem={this.props.handleChangeActiveMenuItem}
-          activeMenuItem={this.props.activeMenuItem}
-        />
-      </div>
-    )
-  }
+const HeaderMenuLinks = (props) => {
+  return (
+    <div className="menu-links" id={'menu-links'}>
+      <NavLink
+        handleChangeActiveMenuItem={props.handleChangeActiveMenuItem}
+        activeMenuItem={props.activeMenuItem}
+      />
+    </div>
+  )
 }
 
 HeaderMenuLinks.propTypes = {
   handleChangeActiveMenuItem: PropTypes.func,
   activeMenuItem: PropTypes.string
 }
+
+export default HeaderMenuLinks
