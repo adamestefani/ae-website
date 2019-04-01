@@ -29,14 +29,15 @@ const Gallery = (props) => {
             .concat(value)}.jpg`
 
           return (
-            <img
-              className="gallery-item"
-              key={index}
-              src={filePath.concat('portfolio/thumbs/', pictureName)}
-              alt=""
-              name={pictureName}
-              onClick={openLargePicture}
-            />
+            <div className="gallery-item">
+              <img
+                key={index}
+                src={filePath.concat('portfolio/thumbs/', pictureName)}
+                alt=""
+                name={pictureName}
+                onClick={openLargePicture}
+              />
+            </div>
           )
         })}
       </div>

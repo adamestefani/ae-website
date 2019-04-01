@@ -1,5 +1,6 @@
 import React from 'react'
 import { PropTypes } from 'prop-types'
+import menuIcon from '../../resource/icon_burger.svg'
 
 const menuItems = [
   { label: 'Gallery', name: 'gallery' },
@@ -29,12 +30,17 @@ const NavLink = (args) => {
 
 const HeaderMenuLinks = (props) => {
   return (
-    <div className="menu-links" id={'menu-links'}>
-      <NavLink
-        handleChangeActiveMenuItem={props.handleChangeActiveMenuItem}
-        activeMenuItem={props.activeMenuItem}
-      />
-    </div>
+    <>
+      <div className="menu-links" id={'menu-links'}>
+        <NavLink
+          handleChangeActiveMenuItem={props.handleChangeActiveMenuItem}
+          activeMenuItem={props.activeMenuItem}
+        />
+      </div>
+      <div className="menu-icon">
+        <img src={menuIcon} alt="" />
+      </div>
+    </>
   )
 }
 

@@ -1,3 +1,7 @@
+$breakpoint-media-links-medium: 1040px;
+$breakpoint-gallery-small: 900px;
+$breakpoint-menu-small: 680px;
+
 body {
   margin: 0;
   padding: 0;
@@ -46,7 +50,7 @@ p {
   display: flex;
   z-index: 2;
   height: 60px;
-  width: 100%;
+  width: 100vw;
   background-color: rgba(0, 0, 0, 0.97);
   justify-content: space-between;
   box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.2);
@@ -64,6 +68,24 @@ p {
   color: rgb(255, 255, 255);
   font-size: 0.8rem;
   margin-right: 60px;
+
+  @media (max-width: $breakpoint-media-links-medium) {
+    margin-right: 10px;
+  }
+
+  @media (max-width: $breakpoint-menu-small) {
+    display: none;
+  }
+}
+
+.menu-icon {
+  display: none;
+
+  @media (max-width: $breakpoint-menu-small) {
+    display: flex;
+    align-items: stretch;
+    margin-right: 10px;
+  }
 }
 
 .menu-links-item {
@@ -93,6 +115,10 @@ p {
   display: flex;
   align-items: center;
   margin-left: 60px;
+
+  @media (max-width: $breakpoint-media-links-medium) {
+    margin-left: 10px;
+  }
 }
 
 .home-title {
@@ -147,6 +173,10 @@ p {
   padding: 90px 0;
   opacity: 0;
   transition: 500ms;
+
+  @media (max-width: $breakpoint-gallery-small) {
+   top: -8800px
+  }
 }
 
 .fade-background-out {
@@ -220,13 +250,32 @@ p {
   width: 900px;
   flex-direction: row;
   flex-wrap: wrap;
+
+  @media (max-width: $breakpoint-gallery-small) {
+    justify-content: center;
+    width: 98%;
+  }
+
+  // @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  //   /* Retina-specific */
+  //   justify-content: center;
+  //   width: 198%;
+  // }
 }
 
 .gallery-item {
   margin: 5px 5px;
-  background-color: rgb(230, 230, 230);
-  flex-grow: initial;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
   transition: 200ms;
+
+  @media (max-width: $breakpoint-gallery-small) {
+    align-items: center;
+  }
+
+  img {
+    width: 100%;
+  }
 }
 
 .gallery-item:hover {
@@ -268,6 +317,10 @@ p {
   .footer-media {
     display: flex;
     flex-direction: column;
+
+    @media (max-width: $breakpoint-media-links-medium) {
+      display: none;
+    }
   }
 
   .footer-copyright {

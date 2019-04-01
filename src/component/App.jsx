@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import Header from './Header/Header'
-import Body from './Body/Body'
-import Footer from './Body/Footer'
+import Header from './header/Header'
+import Body from './body/Body'
+import Footer from './body/Footer'
 
 const App = () => {
   const [activeMenuItem, setActiveMenuItem] = useState('home')
