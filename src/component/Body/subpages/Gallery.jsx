@@ -29,9 +29,8 @@ const Gallery = (props) => {
             .concat(value)}.jpg`
 
           return (
-            <div className="gallery-item">
+            <div className="gallery-item" key={index}>
               <img
-                key={index}
                 src={filePath.concat('portfolio/thumbs/', pictureName)}
                 alt=""
                 name={pictureName}

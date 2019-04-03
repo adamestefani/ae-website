@@ -12,7 +12,7 @@ const About = (props) => {
       <h1 className="page-title">About</h1>
       <div className="about-area">
         <div className="about-picture">
-          <img src="" alt="" />
+          <img src="https://s3.amazonaws.com/adamestefaniphoto/portfolio/thumbs/img_017.jpg" alt=""/>
         </div>
         <div className="about-text">
           <h1>

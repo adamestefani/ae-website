@@ -1,5 +1,7 @@
 $breakpoint-media-links-medium: 1040px;
 $breakpoint-gallery-small: 900px;
+$breakpoint-about-medium: 960px;
+$breakpoint-about-small: 740px;
 $breakpoint-menu-small: 680px;
 
 body {
@@ -10,6 +12,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
   line-height: 1;
   background-color: rgb(255, 255, 255);
+
+  overflow: auto;
+  pointer-events: initial;
+
+  .no-scroll {
+    overflow: hidden;
+    pointer-events: none;
+  }
 }
 
 code {
@@ -146,7 +156,7 @@ p {
 .page-content {
   position: absolute;
   width: 100vw;
-  top: -500px;
+  top: -750px;
   align-items: center;
   justify-content: center;
   display: flex;
@@ -154,6 +164,10 @@ p {
   padding: 90px 0;
   opacity: 0;
   transition: 500ms;
+
+  @media (max-width: $breakpoint-about-small) {
+    top: -1350px;
+  }
 }
 
 .page-content.target,
@@ -175,7 +189,7 @@ p {
   transition: 500ms;
 
   @media (max-width: $breakpoint-gallery-small) {
-   top: -8800px
+    top: -8800px;
   }
 }
 
@@ -271,6 +285,7 @@ p {
 
   @media (max-width: $breakpoint-gallery-small) {
     align-items: center;
+    max-width: 465px;
   }
 
   img {
@@ -354,34 +369,96 @@ p {
 .about-area {
   display: flex;
   align-items: flex-start;
+  flex-direction: row;
+  width: 900px;
+
+  @media (max-width: $breakpoint-about-medium) {
+    width: 100vw;
+  }
+
+  @media (max-width: $breakpoint-about-small) {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .about-picture {
   width: 300px;
-  height: 340px;
+  display: flex;
+  align-items: center;
   background-color: rgb(190, 190, 190);
   margin: 10px;
+
+  img {
+    width: 100%;
+    min-width: 300px;
+  }
+
+  @media (max-width: $breakpoint-about-small) {
+    width: 100%;
+    max-width: 300px;
+
+    img {
+      width: 100%;
+      min-width: auto;
+      max-width: 300px;
+    }
+  }
 }
 
 .about-text {
   display: flex;
   flex-direction: column;
+  width: auto;
   align-content: flex-start;
-  width: 600px;
   text-align: justify;
+  margin-right: 20px;
+
+  @media (max-width: $breakpoint-about-small) {
+    margin: 30px;
+  }
 }
 
 /*---------- CONTACT ----------*/
 .contact-area {
   display: flex;
   align-items: flex-start;
+  flex-direction: row;
+  width: 900px;
+
+  @media (max-width: $breakpoint-about-medium) {
+    width: 100vw;
+  }
+
+  @media (max-width: $breakpoint-about-small) {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .contact-picture {
   width: 300px;
-  height: 340px;
+  display: flex;
+  align-items: center;
   background-color: rgb(190, 190, 190);
-  margin: 10px;
+  margin-right: 20px;
+
+  img {
+    width: 100%;
+    min-width: 300px;
+  }
+
+  @media (max-width: $breakpoint-about-small) {
+    width: 100%;
+    max-width: 300px;
+    margin: 0;
+
+    img {
+      width: 100%;
+      min-width: auto;
+      max-width: 300px;
+    }
+  }
 }
 
 .contact-text {
@@ -390,6 +467,12 @@ p {
   align-content: flex-start;
   width: 600px;
   text-align: justify;
+  margin: 10px;
+
+  @media (max-width: $breakpoint-about-small) {
+    margin: 30px;
+    width: calc(100vw - 40px);
+  }
 }
 
 form {

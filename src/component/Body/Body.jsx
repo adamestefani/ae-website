@@ -1,5 +1,5 @@
 import React from 'react'
-import { Home, Gallery, About, Store, Contact } from './subpages/Subpages'
+import { Home, Gallery, About, Contact } from './subpages/Subpages'
 import { PropTypes } from 'prop-types'
 
 const Body = (props) => {
@@ -8,7 +8,6 @@ const Body = (props) => {
       <Home activeMenuItem={props.activeMenuItem} />
       <Gallery activeMenuItem={props.activeMenuItem} />
       <About activeMenuItem={props.activeMenuItem} />
-      <Store activeMenuItem={props.activeMenuItem} />
       <Contact activeMenuItem={props.activeMenuItem} />
     </>
   )

@@ -23,7 +23,10 @@ const Contact = (props) => {
           </form>
         </div>
         <div className="contact-picture">
-          <img src="" alt="" />
+          <img
+            src="https://s3.amazonaws.com/adamestefaniphoto/portfolio/thumbs/img_017.jpg"
+            alt=""
+          />
         </div>
       </div>
     </div>
