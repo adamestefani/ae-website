@@ -1,18 +1,22 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import GlobalContext from '../../../context/globalContext'
 
 const About = (props) => {
+  const { activeMenuItem } = useContext(GlobalContext)
+
   return (
     <div
       className={
-        props.activeMenuItem === 'about'
-          ? 'page-content target'
-          : 'page-content'
+        activeMenuItem === 'about' ? 'page-content target' : 'page-content'
       }
     >
       <h1 className="page-title">About</h1>
       <div className="about-area">
         <div className="about-picture">
-          <img src="https://s3.amazonaws.com/adamestefaniphoto/portfolio/thumbs/img_017.jpg" alt=""/>
+          <img
+            src="https://s3.amazonaws.com/adamestefaniphoto/portfolio/thumbs/img_017.jpg"
+            alt=""
+          />
         </div>
         <div className="about-text">
           <h1>

@@ -1,52 +1,31 @@
-import React from 'react'
-import { PropTypes } from 'prop-types'
+import React, { useContext } from 'react'
 import menuIcon from '../../resource/icon_burger.svg'
-
-const menuItems = [
-  { label: 'Gallery', name: 'gallery' },
-  { label: 'About', name: 'about' },
-  // { label: 'Store', name: 'store' },
-  { label: 'Contact', name: 'contact' }
-]
-
-const NavLink = (args) => {
-  return menuItems.map((item) => {
-    return (
-      <a
-        href={`#${item.name}`}
-        onClick={args.handleChangeActiveMenuItem}
-        className={'menu-links-item'.concat(
-          args.activeMenuItem === item.name ? ' active' : ''
-        )}
-        key={item.name}
-        id={`menu-item-${item.name}`}
-        name={item.name}
-      >
-        {item.label}
-      </a>
-    )
-  })
-}
+import closeMenu from '../../resource/icon_close.svg'
+import MenuNavigationLink from './MenuNavigationLink'
+import GlobalContext from '../../context/globalContext'
+import { TOGGLE_SIDE_MENU_BAR } from '../../action/globalAction'
 
 const HeaderMenuLinks = (props) => {
+  const { sideMenuBarActive, dispatchSideMenuBar } = useContext(GlobalContext)
+
+  const toggleSideMenuBar = () => {
+    dispatchSideMenuBar({ type: TOGGLE_SIDE_MENU_BAR })
+  }
+
   return (
     <>
       <div className="menu-links" id={'menu-links'}>
-        <NavLink
-          handleChangeActiveMenuItem={props.handleChangeActiveMenuItem}
-          activeMenuItem={props.activeMenuItem}
-        />
+        <MenuNavigationLink />
       </div>
-      <div className="menu-icon">
-        <img src={menuIcon} alt="" />
+      <div className={`menu-icon ${sideMenuBarActive ? 'show-side-menu' : ''}`}>
+        <img
+          src={sideMenuBarActive ? closeMenu : menuIcon}
+          alt=""
+          onClick={toggleSideMenuBar}
+        />
       </div>
     </>
   )
-}
-
-HeaderMenuLinks.propTypes = {
-  handleChangeActiveMenuItem: PropTypes.func,
-  activeMenuItem: PropTypes.string
 }
 
 export default HeaderMenuLinks

@@ -45,11 +45,31 @@ p {
   font-size: 1rem;
 }
 
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  justify-content: space-between;
+.enable-scroll {
+  overflow: initial;
+}
+.disable-scroll {
+  overflow: hidden;
+}
+
+/*---------- SIDE BAR MENU ----------*/
+.side-bar-wrapper {
+  z-index: 10;
+  position: fixed;
+  top: 60px;
+  width: 100vw;
+  height: calc(100vh - 60px);
+  overflow: hidden;
+  pointer-events: none;
+  background-color: rgba(0, 0, 0, 0.8);
+  opacity: 0;
+
+  transition: 250ms;
+
+  &.side-menu-on {
+    opacity: 1;
+    pointer-events: initial;
+  }
 }
 
 /*---------- TOP MENU ----------*/
@@ -93,8 +113,18 @@ p {
 
   @media (max-width: $breakpoint-menu-small) {
     display: flex;
-    align-items: stretch;
+    align-items: center;
     margin-right: 10px;
+    cursor: pointer;
+
+    img {
+      width: 48px;
+      height: 48px;
+    }
+  }
+
+  &.show-side-menu {
+    filter: invert(100%);
   }
 }
 

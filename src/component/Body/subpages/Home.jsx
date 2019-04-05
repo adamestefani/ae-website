@@ -1,23 +1,21 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import BackgroundImage from '../BackgroundImage'
-import { PropTypes } from 'prop-types'
+import GlobalContext from '../../../context/globalContext'
 
 const Home = (props) => {
+  const { activeMenuItem } = useContext(GlobalContext)
+
   return (
     <>
       <BackgroundImage
         className={
-          props.activeMenuItem === 'home'
+          activeMenuItem === 'home'
             ? 'home-background'
             : 'home-background fade-background-out'
         }
       />
     </>
   )
-}
-
-Home.protoTypes = {
-  activeMenuItem: PropTypes.string
 }
 
 export default Home

@@ -1,30 +1,21 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import HeaderHomeLogo from './HeaderHomeLogo'
 import HeaderMenuLinks from './HeaderMenuLinks'
-import { PropTypes } from 'prop-types'
+import GlobalContext from '../../context/globalContext'
 
 const Header = (props) => {
+  const { activeMenuItem } = useContext(GlobalContext)
+
   return (
     <div
       className={
-        props.activeMenuItem === 'home' ? 'header-area' : 'header-area content'
+        activeMenuItem === 'home' ? 'header-area' : 'header-area content'
       }
     >
-      <HeaderHomeLogo
-        handleChangeActiveMenuItem={props.handleChangeActiveMenuItem}
-        activeMenuItem={props.activeMenuItem}
-      />
-      <HeaderMenuLinks
-        handleChangeActiveMenuItem={props.handleChangeActiveMenuItem}
-        activeMenuItem={props.activeMenuItem}
-      />
+      <HeaderHomeLogo />
+      <HeaderMenuLinks />
     </div>
   )
-}
-
-Header.propTypes = {
-  handleChangeActiveMenuItem: PropTypes.func,
-  activeMenuItem: PropTypes.string
 }
 
 export default Header

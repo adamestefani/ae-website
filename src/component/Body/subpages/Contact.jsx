@@ -1,14 +1,15 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Input, Button, Textarea } from '../../util/forms/form-items'
 import submitEmailForm from '../../service/submitEmailForm'
+import GlobalContext from '../../../context/globalContext'
 
 const Contact = (props) => {
+  const { activeMenuItem } = useContext(GlobalContext)
+
   return (
     <div
       className={
-        props.activeMenuItem === 'contact'
-          ? 'page-content target'
-          : 'page-content'
+        activeMenuItem === 'contact' ? 'page-content target' : 'page-content'
       }
     >
       <h1 className="page-title">Contact</h1>
