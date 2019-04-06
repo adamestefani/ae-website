@@ -1,6 +1,9 @@
 import React, { useContext } from 'react'
 import GlobalContext from '../../context/globalContext'
-import { REPLACE_ACTIVE_MENU_ITEM } from '../../action/globalAction'
+import {
+  REPLACE_ACTIVE_MENU_ITEM,
+  DEACTIVATE_SIDE_MENU_BAR
+} from '../../action/globalAction'
 
 const menuItems = [
   { label: 'Gallery', name: 'gallery' },
@@ -10,7 +13,11 @@ const menuItems = [
 ]
 
 const MenuNavigationLink = (props) => {
-  const { activeMenuItem, dispatchActiveMenuItem } = useContext(GlobalContext)
+  const {
+    activeMenuItem,
+    dispatchActiveMenuItem,
+    dispatchSideMenuBar
+  } = useContext(GlobalContext)
 
   const handleChangeActiveMenuItem = (event) => {
     const nextActiveItem = event.target.name
@@ -18,6 +25,10 @@ const MenuNavigationLink = (props) => {
     dispatchActiveMenuItem({
       type: REPLACE_ACTIVE_MENU_ITEM,
       newActiveMenuItem: nextActiveItem
+    })
+
+    dispatchSideMenuBar({
+      type: DEACTIVATE_SIDE_MENU_BAR
     })
   }
 

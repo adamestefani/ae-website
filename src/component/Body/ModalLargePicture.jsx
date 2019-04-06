@@ -9,12 +9,7 @@ const ModalLargePicture = (props) => {
     <div className={[props.className]} onClick={props.closeLargePicture}>
       {props.largePictureName.length > 0 ? (
         <>
-          <img
-            className="close-modal"
-            src={imgCloseModal}
-            alt=""
-            onClick={props.closeLargePicture}
-          />
+          <img className="close-modal" src={imgCloseModal} alt="" />
           <img
             className="large-picture"
             src={filePath.concat('portfolio/', props.largePictureName)}

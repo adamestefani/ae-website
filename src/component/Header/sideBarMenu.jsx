@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import GlobalContext from '../../context/globalContext'
+import MenuNavigationLink from './MenuNavigationLink'
 
 const SideBarMenu = (props) => {
   const { sideMenuBarActive } = useContext(GlobalContext)
@@ -9,7 +10,11 @@ const SideBarMenu = (props) => {
       className={`side-bar-wrapper 
         ${sideMenuBarActive ? 'side-menu-on' : ''}
         `}
-    />
+    >
+      <div className="side-menu-links">
+        <MenuNavigationLink />
+      </div>
+    </div>
   )
 }
 

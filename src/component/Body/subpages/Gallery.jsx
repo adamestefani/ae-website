@@ -12,11 +12,13 @@ const Gallery = (props) => {
   const openLargePicture = (event) => {
     setShowLargePicture(true)
     setLargePictureName(event.target.name)
+    document.body.classList.add('disable-scroll')
   }
 
   const closeLargePicture = () => {
     setShowLargePicture(false)
     setLargePictureName('')
+    document.body.classList.remove('disable-scroll')
   }
 
   return (
