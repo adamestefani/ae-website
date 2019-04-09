@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import imgCloseModal from '../../resource/icon_close.svg'
 
-const filePath = process.env.REACT_APP_FILE_PATH
+const filePath = process.env.PUBLIC_URL
 
 const ModalLargePicture = (props) => {
   return (

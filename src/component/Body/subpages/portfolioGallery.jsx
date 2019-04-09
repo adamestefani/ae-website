@@ -1,7 +1,7 @@
 import React from 'react'
 import { PropTypes } from 'prop-types'
 
-const filePath = process.env.REACT_APP_FILE_PATH
+const filePath = process.env.PUBLIC_URL
 const gallery = new Array(24).fill(undefined).map((_, index) => index + 1)
 
 const PortfolioGallery = (props) => {

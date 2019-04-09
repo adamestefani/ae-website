@@ -14,7 +14,7 @@ const About = (props) => {
       <div className="about-area">
         <div className="about-picture">
           <img
-            src="https://s3.amazonaws.com/adamestefaniphoto/portfolio/thumbs/img_017.jpg"
+            src={`${process.env.PUBLIC_URL}/portfolio/thumbs/img_017.jpg`}
             alt=""
           />
         </div>
