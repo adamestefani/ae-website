@@ -27,10 +27,10 @@ const HeaderHomeLogo = (props) => {
     <div className={'home-link'}>
       <a href={'#home'} name={'home'} onClick={handleChangeActiveMenuItem}>
         <div id={'home'} className={'home-title'}>
-          website
+          adam estefani
         </div>
         <div id={'home'} className={'home-subtitle'}>
-          {'slogan & something else'}
+          {'Urban & lifestyle photography'}
         </div>
       </a>
     </div>
