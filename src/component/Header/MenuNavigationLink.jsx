@@ -7,9 +7,9 @@ import {
 
 const menuItems = [
   { label: 'Gallery', name: 'gallery' },
-  { label: 'About', name: 'about' },
+  { label: 'About', name: 'about' }
   // { label: 'Store', name: 'store' },
-  { label: 'Contact', name: 'contact' }
+  // { label: 'Contact', name: 'contact' }
 ]
 
 const MenuNavigationLink = (props) => {

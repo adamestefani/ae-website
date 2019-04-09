@@ -6,6 +6,11 @@ import GlobalContext from '../../../context/globalContext'
 const Contact = (props) => {
   const { activeMenuItem } = useContext(GlobalContext)
 
+  const handleSubmitEmailForm = () => {
+    document.getElementById('contact').reset()
+    submitEmailForm()
+  }
+
   return (
     <div
       className={
@@ -15,12 +20,16 @@ const Contact = (props) => {
       <h1 className="page-title">Contact</h1>
       <div className="contact-area">
         <div className="contact-text">
-          <form>
+          <form id="contact">
             <Input name="your-name" label="Your name" />
             <Input name="your-email" label="Your email" />
             <Input name="subject" label="Subject" />
             <Textarea name="your-message" label="Your message" />
-            <Button type="button" label="Send" onClick={submitEmailForm} />
+            <Button
+              type="button"
+              label="Send"
+              onClick={handleSubmitEmailForm}
+            />
           </form>
         </div>
         <div className="contact-picture">

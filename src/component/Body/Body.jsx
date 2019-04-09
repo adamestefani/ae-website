@@ -1,5 +1,5 @@
 import React from 'react'
-import { Home, Gallery, About, Contact } from './subpages/Subpages'
+import { Home, Gallery, About } from './subpages/Subpages'
 
 const Body = (props) => {
   return (
@@ -7,7 +7,7 @@ const Body = (props) => {
       <Home />
       <Gallery />
       <About />
-      <Contact />
+      {/* <Contact /> */}
     </>
   )
 }
