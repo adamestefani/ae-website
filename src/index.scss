@@ -1,5 +1,6 @@
 $breakpoint-media-links-medium: 1040px;
 $breakpoint-gallery-small: 900px;
+$breakpoint-gallery-supersmall: 430px;
 $breakpoint-about-medium: 960px;
 $breakpoint-about-small: 740px;
 $breakpoint-menu-small: 680px;
@@ -55,9 +56,6 @@ p {
   }
 }
 
-.enable-scroll {
-  overflow: initial;
-}
 .disable-scroll {
   overflow: hidden;
 }
@@ -82,8 +80,6 @@ p {
 
   @media (max-width: $breakpoint-menu-small) {
     display: flex;
-    // overflow: hidden;
-    // pointer-events: none;
 
     .side-menu-links {
       position: absolute;
@@ -202,7 +198,7 @@ p {
   margin-left: 60px;
 
   @media (max-width: $breakpoint-media-links-medium) {
-    margin-left: 10px;
+    margin-left: 20px;
   }
 }
 
@@ -237,7 +233,6 @@ p {
   display: flex;
   flex-direction: column;
   padding: 90px 30px;
-  // margin: 0 30px;
   opacity: 0;
   transition: 500ms;
 
@@ -344,14 +339,8 @@ p {
 
   @media (max-width: $breakpoint-gallery-small) {
     justify-content: center;
-    width: 98%;
+    width: 90%;
   }
-
-  // @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  //   /* Retina-specific */
-  //   justify-content: center;
-  //   width: 198%;
-  // }
 }
 
 .gallery-item {
@@ -363,6 +352,12 @@ p {
   @media (max-width: $breakpoint-gallery-small) {
     align-items: center;
     max-width: 465px;
+    min-width: 380px;
+  }
+  @media (max-width: $breakpoint-gallery-supersmall) {
+    align-items: center;
+    max-width: 100%;
+    min-width: 100%;
   }
 
   img {
